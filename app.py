@@ -20,11 +20,11 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/templates/index.html")
 def index():
   return render_template("/index.html")
 
-@app.route("/ask", methods=["POST"])
+@app.route("/templates/ask.html", methods=["POST"])
 def ask():
   question = request.form["question"]
   answer = chatbot(question)
